@@ -1,28 +1,28 @@
 
 import { ADD_TO_CART,REMOVE_ITEM,SUB_QUANTITY,ADD_QUANTITY,ADD_SHIPPING} from './action-types/cart-actions'
 
-//add cart action
+//เพิ่มของ
 export const addToCart= (id)=>{
     return{
         type: ADD_TO_CART,
         id
     }
 }
-//remove item action
+//ลบของ
 export const removeItem=(id)=>{
     return{
         type: REMOVE_ITEM,
         id
     }
 }
-//subtract qt action
+//ลบจำนวน
 export const subtractQuantity=(id)=>{
     return{
         type: SUB_QUANTITY,
         id
     }
 }
-//add qt action
+//เพิ่มจำนวน
 export const addQuantity=(id)=>{
     return{
         type: ADD_QUANTITY,

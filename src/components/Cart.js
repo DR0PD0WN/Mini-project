@@ -5,15 +5,15 @@ import { removeItem,addQuantity,subtractQuantity} from './actions/cartActions'
 import Recipe from './Recipe'
 class Cart extends Component{
 
-    //to remove the item completely
+    //ลบ
     handleRemove = (id)=>{
         this.props.removeItem(id);
     }
-    //to add the quantity
+    //เพิ่มจำนวน
     handleAddQuantity = (id)=>{
         this.props.addQuantity(id);
     }
-    //to substruct from the quantity
+    //ลดจำนวน
     handleSubtractQuantity = (id)=>{
         this.props.subtractQuantity(id);
     }
@@ -70,7 +70,7 @@ class Cart extends Component{
 const mapStateToProps = (state)=>{
     return{
         items: state.addedItems,
-        //addedItems: state.addedItems
+        
     }
 }
 const mapDispatchToProps = (dispatch)=>{
