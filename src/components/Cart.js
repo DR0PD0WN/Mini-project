@@ -18,6 +18,11 @@ class Cart extends Component{
         this.props.subtractQuantity(id);
     }
     render(){
+
+        const font = {
+            size: "50px",
+            fontFamily: "Georgia"
+        };
               
         let addedItems = this.props.items.length ?
             (  
@@ -55,7 +60,7 @@ class Cart extends Component{
        return(
             <div className="container">
                 <div className="cart">
-                    <h5>You have ordered:</h5>
+                    <h5 style={font}>You have ordered:</h5>
                     <ul className="collection">
                         {addedItems}
                     </ul>

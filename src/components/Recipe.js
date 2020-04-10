@@ -1,8 +1,17 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import StripeCheckout from 'react-stripe-checkout';
 //import { addShipping } from './actions/cartActions'
 class Recipe extends Component{
+
+    onToken = (token, addresses) => {
+        // TODO: Send the token information and any other
+        // relevant information to your payment process
+        // server, wait for the response, and update the UI
+        // accordingly. How this is done is up to you. Using
+        // XHR, fetch, or a GraphQL mutation is typical.
+    }
     
     componentWillUnmount() {
          if(this.refs.shipping.checked)
@@ -31,10 +40,13 @@ class Recipe extends Component{
                         </li>
                         <li className="collection-item"><b>Total: {this.props.total} Bath</b></li>
                     </div>
-                    <div className="checkout">
-                        <button className="waves-effect waves-light btn">Checkout</button>
-                    </div>
-                 </div>
+                    <Link to="/checkout">
+                    <StripeCheckout
+                   stripeKey="pk_test_UtxGjMLXh5aHahfmyN41DFJy00v9QddHYz"
+                   token={this.onToken}
+                    /></Link>
+            </div>
+                 
         )
     }
 }

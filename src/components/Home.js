@@ -9,6 +9,11 @@ import { addToCart } from './actions/cartActions'
     }
 
     render(){
+        const font = {
+            size: "50px",
+            fontFamily: "Georgia"
+        };
+        
         let itemList = this.props.items.map(item=>{
             return(
                 <div className="card" key={item.id}>
@@ -29,7 +34,7 @@ import { addToCart } from './actions/cartActions'
 
         return(
             <div className="container">
-                <h3 className="center">Our items</h3>
+                <h3 className="center" style={font}>Our items</h3>
                 <div className="box">
                     {itemList}
                 </div>
