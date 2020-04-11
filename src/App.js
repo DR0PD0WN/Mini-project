@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Cart from './components/Cart'
 import Checkout from './components/Checkout'
+import Login from './components/Login'
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
                     <Route exact path="/" component={Home}/>
                     <Route path="/cart" component={Cart}/>
                     <Route path="/checkout" component={Checkout}/>
+                    <Route path="/login" component={Login}/>
                   </Switch>
              </div>
        </BrowserRouter>
