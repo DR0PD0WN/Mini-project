@@ -5,8 +5,13 @@ import './index.css'
 import cartReducer from './components/reducers/cartReducer';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
+import config from './config';
+import firebase from 'firebase/app'
 
 const store = createStore(cartReducer);
+
+if(firebase.apps.length === 0)
+    firebase.initializeApp(config)
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 
